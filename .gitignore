@@ -1,0 +1,52 @@
+# Local credentials and configuration (never publish)
+llm_config.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# JavaScript dependencies and generated frontend files
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Application output and packaging artifacts
+build/
+dist/
+*.log
+llm_outputs.txt
+
+# Local datasets, model weights, and generated reports
+data/
+uploads/
+models/
+Qwen2.5-7B-Instruct/
+*.xlsx
+*.xls
+*.csv
+*.parquet
+*.safetensors
+*.pt
+*.pth
+!examples/sample_mrp.xlsx
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

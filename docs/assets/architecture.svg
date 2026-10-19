@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="520" viewBox="0 0 1440 520" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">MRP Insight Console architecture</title>
+  <desc id="desc">An Excel workbook enters the Next.js interface and FastAPI service. In-memory data feeds rule-based analysis and weekly forecasting. Optional anomaly interpretation uses ModelScope, Ollama, or local Transformers.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="m1 1 8 4-8 4" stroke="#7A90A7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <rect x="1" y="1" width="1438" height="518" rx="22" fill="#F5F8FC" stroke="#DDE5EF"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="48" y="54" font-size="22" font-weight="700" fill="#172B49">A transparent path from data to decisions</text>
+    <text x="48" y="82" font-size="15" fill="#667C96">Local analysis first. Optional model assistance for anomalous materials.</text>
+    <g stroke="#96A8BC" stroke-width="2" marker-end="url(#arrow)"><path d="M252 223H304"/><path d="M558 223H610"/><path d="M863 223H909V171H955"/><path d="M909 223V358H955"/><path d="M1170 220V254" stroke-dasharray="6 5"/></g>
+    <rect x="48" y="144" width="204" height="158" rx="16" fill="white" stroke="#D9E3EE"/>
+    <g stroke="#258576" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M76 167h22l10 10v28H76zM98 167v11h10M84 187h16M84 195h16"/></g>
+    <text x="74" y="237" font-size="20" font-weight="700" fill="#17394A">Excel workbook</text><text x="74" y="265" font-size="14" fill="#6B7E94">.xlsx / first worksheet</text>
+    <rect x="310" y="144" width="248" height="158" rx="16" fill="white" stroke="#D9E3EE"/>
+    <g stroke="#4D71B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="336" y="169" width="36" height="27" rx="4"/><path d="M347 202h14M354 196v6M337 177h34"/></g>
+    <text x="336" y="237" font-size="20" font-weight="700" fill="#17394A">Next.js + React</text><text x="336" y="265" font-size="14" fill="#6B7E94">Dashboard / charts / zh + en</text>
+    <rect x="616" y="144" width="247" height="158" rx="16" fill="#15344A"/>
+    <g stroke="#67D8C1" stroke-width="2.5"><ellipse cx="659" cy="174" rx="17" ry="6"/><path d="M642 174v25c0 8 34 8 34 0v-25M642 186c0 8 34 8 34 0"/></g>
+    <text x="642" y="237" font-size="20" font-weight="700" fill="white">FastAPI + pandas</text><text x="642" y="265" font-size="14" fill="#ABCCDD">Shared in-memory dataset</text>
+    <rect x="961" y="122" width="431" height="98" rx="16" fill="white" stroke="#D9E3EE"/>
+    <g stroke="#258576" stroke-width="2.5" stroke-linecap="round"><path d="m985 173 9-8 10 10 12-22 12 9"/><path d="M985 185h44"/></g>
+    <text x="1048" y="163" font-size="19" font-weight="700" fill="#17394A">Rules + risk scoring</text><text x="1048" y="190" font-size="14" fill="#6B7E94">Safety stock / shortage intervals / causes</text>
+    <rect x="961" y="260" width="431" height="59" rx="14" fill="#EDF1FF" stroke="#CCD8F7"/>
+    <g stroke="#6577B0" stroke-width="2" stroke-linecap="round"><path d="m985 281 10-5 10 5v14l-10 5-10-5zM995 276v24M985 281l20 14M1005 281l-20 14"/></g>
+    <text x="1048" y="285" font-size="16" font-weight="600" fill="#40578D">Optional LLM interpretation</text><text x="1048" y="306" font-size="12" fill="#6577A0">ModelScope / Ollama / Transformers</text>
+    <rect x="961" y="333" width="431" height="98" rx="16" fill="white" stroke="#D9E3EE"/>
+    <g stroke="#4D71B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M985 393v-17M997 393v-29M1009 393v-22M1021 393v-36"/></g>
+    <text x="1048" y="374" font-size="19" font-weight="700" fill="#17394A">Weekly forecasting</text><text x="1048" y="402" font-size="14" fill="#6B7E94">Validation / intervals / replenishment</text>
+    <text x="48" y="477" font-size="14" fill="#667C96">Uploads replace the active dataset. Restarting clears uploaded data and analysis history.</text>
+  </g>
+</svg>

@@ -1,0 +1,456 @@
+{
+  "title": "MRP System",
+  "analyze": {
+    "analysisConsole": "Analysis Console",
+    "consoleDescription": "Make the input area a parameter panel like an admin console, rather than a traditional form page.",
+    "active": "Active",
+    "materialCode": "Material Code",
+    "placeholder": "e.g. 1-51692-5",
+    "windowSize": "Window Size",
+    "quantileThreshold": "Quantile Threshold",
+    "minIntervalLength": "Min Interval Length",
+    "includeLlmDeep": "Run Deep LLM Analysis",
+    "startAnalysis": "Start Analysis",
+    "analyzing": "Analyzing...",
+    "clearResults": "Clear Results",
+    "emptyTitle": "No Analysis Results",
+    "emptyHint": "Enter a material code and click Start Analysis to view results here.",
+    "materialRequired": "Please enter a material code.",
+    "analysisResults": "Analysis Results",
+    "noResults": "No results yet. Enter a material code and click Start Analysis.",
+    "error": "Error",
+    "materialNotFound": "Material not found",
+    "analysisFailed": "Analysis failed",
+    "inventoryTimeline": "Inventory Timeline",
+    "positionTag": "Position #1.0",
+    "inventory": "Inventory",
+    "safetyStock": "Safety Stock",
+    "diagnosticSummary": "Diagnostic Summary",
+    "summaryDescription": "Place status, rule hits, and LLM text in one reading column to reduce back-and-forth scanning.",
+    "materialId": "Material ID",
+    "intervalCount": "Interval Count",
+    "configSummary": "Window {{windowSize}} / Quantile {{quantile}} / Min Interval {{minIntervalLen}}",
+    "hit": "Hit",
+    "notHit": "Not Hit",
+    "noLlmOutput": "No LLM analysis text was returned for there is no anomaly or the user has not opened LLM Analysis.",
+    "rules": {
+      "title": "Detection Rules",
+      "gradualShortage": "Gradual Shortage",
+      "fluctuation": "Fluctuation Anomaly",
+      "demandSpike": "Demand Spike",
+      "delayedSupply": "Delayed Supply"
+    },
+    "confidence": "Confidence",
+    "trend": "Trend",
+    "riskLevel": "Risk Level",
+    "riskScore": "Risk Score",
+    "description": "Description",
+    "llmLanguage": "LLM Output Language",
+    "llmProvider": "LLM Provider",
+    "providerModelscope": "ModelScope API",
+    "providerOllama": "Ollama Local",
+    "providerLocal": "Local Transformers",
+    "llmReason": "Reason Analysis:",
+    "llmRecommendation": "Recommendations:",
+    "noLlmRecommendation": "No recommendation available. This material is normal or LLM analysis was not enabled.",
+    "Chinese": "Chinese",
+    "English": "English"
+  },
+  "batch": {
+    "batchFilterConsole": "Batch Filter Console",
+    "filterConsoleDescription": "Compress the filter area into a neat console like the reference image, without fancy module division.",
+    "filterActive": "Active",
+    "materialPrefix": "Material Prefix",
+    "all": "All",
+    "analysisLimit": "Analysis Limit",
+    "statusFilter": "Status Filter",
+    "normal": "Normal",
+    "anomaly": "Anomaly",
+    "startBatchAnalysis": "Start Batch Analysis",
+    "analyzing": "Analyzing...",
+    "resetFilters": "Reset Filters",
+    "emptyTitle": "No Batch Results",
+    "emptyHint": "Configure filters and click Start Batch Analysis to view results here.",
+    "batchResults": "Batch Results",
+    "noResults": "No results yet. Configure filters and click Start Batch Analysis.",
+    "batchAnalysisFailed": "Batch analysis failed",
+    "metrics": "Metrics",
+    "reasonDistribution": "Reason Distribution",
+    "resultDetails": "Result Details",
+    "total": "Total",
+    "totalScreened": "Total Screened",
+    "normalCount": "Normal Count",
+    "anomalyCount": "Anomaly Count",
+    "riskRatio": "Risk Ratio",
+    "riskLevel": "Risk Level",
+    "riskLevels": {
+      "L1": {
+        "label": "Low Risk",
+        "hint": "Normal or low inventory risk with minor fluctuations or short-term anomalies."
+      },
+      "L2": {
+        "label": "Moderate-Low Risk",
+        "hint": "Noticeable supply or demand abnormalities that require monitoring."
+      },
+      "L3": {
+        "label": "Moderate-High Risk",
+        "hint": "Significant shortage risks that may affect production or delivery schedules."
+      },
+      "L4": {
+        "label": "High Risk",
+        "hint": "Severe supply shortages or abnormal demand requiring immediate action."
+      }
+    },
+    "riskScore": "Risk Score",
+    "riskLevelDistribution": "Risk Level Distribution",
+    "statusDistribution": "Status Distribution",
+    "sentimentTag": "Sentiment {{count}}",
+    "reasonRanking": "Reason Ranking",
+    "mentionsTag": "Mentions {{count}}",
+    "analysisResults": "Analysis Results",
+    "rowsTag": "Rows {{count}}",
+    "shortageIntervalCount": "Shortage Interval Count",
+    "firstShortageInterval": "First Shortage Interval",
+    "batchPromptRow": "Batch prompt row",
+    "recentProcessHistory": "Recent Process History",
+    "visibleTag": "Visible {{count}}",
+    "noHistory": "No history records are currently available in the API process.",
+    "Chinese": "Chinese",
+    "English": "English"
+  },
+  "home": {
+    "upload": {
+      "title": "Upload Data File",
+      "selectFile": "Select File",
+      "noFile": "No file selected",
+      "selected": "Selected",
+      "uploadButton": "Upload and Analyze",
+      "uploading": "Uploading...",
+      "uploadSuccess": "Upload successful",
+      "uploadFailed": "Upload failed, maybe there was an error during uploading processing or the data was not in the correct format. Please check the data and try again.",
+      "noData": "No data yet. Please upload a file first.",
+      "invalidFormat": "Invalid data format",
+      "missingFields": "Missing required fields"
+    },
+    "supplyIntelligence": "Supply Intelligence",
+    "heroTitle": "MRP Anomaly Detection Dashboard",
+    "heroDescription": "Current homepage has been changed to a workspace-style layout similar to the reference image, focusing on overview cards, recent records and entry points for further analysis, rather than large promotional visuals.",
+    "workspaceNotes": "Workspace Notes",
+    "workspaceNotesBody": "The left navigation provides the product shell, the top filter bar handles context switching, and the main area keeps a high-density data presentation aligned with the reference screenshot.",
+    "activeMaterials": "Active materials",
+    "recentRuns": "Recent runs",
+    "backendStatus": "Backend status",
+    "live": "Live",
+    "syncing": "Syncing",
+    "materials": "Materials",
+    "materialsHint": "Searchable material master data",
+    "materialsTrend": "Material master coverage",
+    "records": "Records",
+    "recordsHint": "Total Excel raw event volume",
+    "recordsTrend": "Raw MRP event rows",
+    "plants": "Plants",
+    "plantsHint": "Unique plant_id count",
+    "plantsTrend": "Plant footprint",
+    "dateWindow": "Date window",
+    "dateWindowHint": "Raw MRP observation interval",
+    "dateWindowTrend": "Observation range",
+    "recentAnalysisHistory": "Recent Analysis History",
+    "noRecentHistory": "No recent analysis records yet.",
+    "tableDescription": "Simulate the working feel of the prompt table in the reference image using list density and status labels.",
+    "visibility": "Visibility 100%",
+    "quickActions": "Quick Actions",
+    "quickActionsDescription": "Turn the follow-up analysis entry points into workspace-style quick action cards.",
+    "table": {
+      "material": "Material",
+      "status": "Status",
+      "analyzedAt": "Analyzed At",
+      "llmLabel": "LLM Label",
+      "materialPrompt": "MRP material prompt"
+    },
+    "quickCards": {
+      "sourceCoverageTitle": "Source Coverage",
+      "sourceCoverageNote": "The data source is connected to the Python API and can fetch overview and analysis results directly.",
+      "singleMaterialTitle": "Single Material Drilldown",
+      "singleMaterialNote": "Go to the single-material page to inspect shortage intervals, rule hits, and LLM explanations.",
+      "batchRiskTitle": "Batch Risk Sweep",
+      "batchRiskNote": "The batch page provides risk ratios, cause rankings, and a detailed table for routine screening."
+    }
+  },
+  "language": "Language",
+  "chinese": "Chinese",
+  "english": "English",
+  "time": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "app": {
+    "operationConsole": "Operations Console",
+    "MRPInsight": "MRP Insight"
+  },
+  "nav": {
+    "llmSettings": "LLM Settings",
+    "overview": "Overview",
+    "singleAnalyze": "Single Analyze",
+    "batchAnalyze": "Exception Lists",
+    "dataSource": "Data Source",
+    "rulesEngine": "Rules Engine",
+    "workflows": "Workflows",
+    "exports": "Exports",
+    "forecast": "Forecast"
+  },
+  "sidebar": {
+    "general": "General",
+    "actions": "Actions",
+    "topics": "Topics",
+    "collapseMenu": "CollapseMenu",
+    "expandMenu": "ExpandMenu"
+  },
+  "topicBoard": {
+    "allTopics": "All topics",
+    "designReference": "Design reference",
+    "riskSignals": "Risk signals",
+    "promptOutputs": "Prompt outputs"
+  },
+  "sidebarCard": {
+    "workspaceSynced": "Workspace synced",
+    "workspaceDescription": "Current brand workspace has been switched to high information density layout, suitable for tables and analysis flows.",
+    "exploreWorkspace": "Explore workspace"
+  },
+  "topbar": {
+    "allModels": "All Models",
+    "allTopics": "All Topics",
+    "search": "Search",
+    "analyze": "Analyze",
+    "importData": "Import data",
+    "connect": "Connect",
+    "configuration": "Configuration",
+    "reset": "Reset",
+    "processingAnalysis": "Processing analysis..."
+  },
+  "pageMeta": {
+    "llmSettings": {
+      "title": "LLM Settings",
+      "subtitle": "Configure enterprise model providers, runtime parameters, credentials and connection checks."
+    },
+    "overview": {
+      "title": "Overview",
+      "subtitle": "View material master data coverage, recent analysis records and anomaly detection workflow status in real time.",
+      "stats": [
+        "Data synced",
+        "API live",
+        "MRP ready"
+      ]
+    },
+    "analyze": {
+      "title": "Single Material Analysis",
+      "subtitle": "Enter a single material number to review rule hits, interval highlights and LLM interpretation results.",
+      "stats": [
+        "Interactive query",
+        "Rule trace",
+        "Chart focus"
+      ]
+    },
+    "batch": {
+      "title": "Exception Lists",
+      "subtitle": "Screen material range in batch, quickly compare risk ratios, reason distribution and detailed results.",
+      "stats": [
+        "Batch queue",
+        "Result table",
+        "Reason ranking"
+      ]
+    },
+    "forecast": {
+      "title": "Future Forecast",
+      "subtitle": "Forecast inventory and safety stock for key materials and review replenishment advice."
+    }
+  },
+  "llmSettings": {
+    "title": "Enterprise LLM Configuration",
+    "subtitle": "Manage cloud API, Ollama and local Transformers settings from one administrator workspace.",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "loading": "Loading LLM configuration...",
+    "loadFailed": "Failed to load LLM configuration.",
+    "save": "Save configuration",
+    "saving": "Saving configuration...",
+    "saveSucceeded": "LLM configuration saved.",
+    "saveFailed": "Failed to save LLM configuration.",
+    "testActive": "Test active provider",
+    "testing": "Testing connection...",
+    "testFailed": "Connection test failed.",
+    "providerTabs": "LLM provider configuration",
+    "general": {
+      "title": "General Runtime",
+      "subtitle": "These defaults are used by single-material deep analysis.",
+      "enableLlm": "Enable LLM deep analysis",
+      "defaultProvider": "Default provider",
+      "defaultLanguage": "Default output language",
+      "temperature": "Temperature",
+      "maxTokens": "Maximum output tokens",
+      "timeout": "Timeout (seconds)",
+      "retryCount": "Retry count"
+    },
+    "providers": {
+      "modelscope": {
+        "title": "ModelScope API",
+        "short": "ModelScope",
+        "subtitle": "OpenAI-compatible cloud inference for the quickest enterprise rollout."
+      },
+      "ollama": {
+        "title": "Ollama Local",
+        "short": "Ollama",
+        "subtitle": "Run a managed local model service on a workstation or intranet server."
+      },
+      "local": {
+        "title": "Local Transformers",
+        "short": "Transformers",
+        "subtitle": "Load model files directly with PyTorch and Transformers for fully offline inference."
+      }
+    },
+    "modelscope": {
+      "apiKey": "API key",
+      "apiKeySaved": "A key is already saved. Leave blank to keep it.",
+      "apiKeyHint": "The key is stored only on the backend and is never returned to the browser.",
+      "baseUrl": "Base URL",
+      "model": "Model name"
+    },
+    "ollama": {
+      "host": "Ollama host",
+      "model": "Model name",
+      "keepAlive": "Keep alive"
+    },
+    "local": {
+      "modelPath": "Local model path",
+      "deviceMap": "Device map",
+      "torchDtype": "Torch dtype"
+    },
+    "usage": {
+      "title": "Provider Deployment Guide",
+      "enterpriseReady": "Administrator reference",
+      "provider": "Provider",
+      "scenario": "Recommended scenario",
+      "setup": "Required setup",
+      "operation": "How to operate",
+      "modelscope": {
+        "scenario": "Teams with approved outbound network access that need the simplest deployment.",
+        "setup": "Create a ModelScope token and configure API key, Base URL and model name.",
+        "operation": "Save the configuration, test the connection, then select ModelScope in single analysis."
+      },
+      "ollama": {
+        "scenario": "Private network deployment where business data must remain on company-managed machines.",
+        "setup": "Install Ollama, run `ollama pull <model-id>`, install the Python ollama package and start the service.",
+        "operation": "Configure the Ollama host and model, test availability, then select Ollama in single analysis."
+      },
+      "local": {
+        "scenario": "Fully offline inference with dedicated GPU resources and controlled model files.",
+        "setup": "Prepare the model directory and install torch, transformers and accelerate with compatible GPU drivers.",
+        "operation": "Configure model path, device and dtype, run the environment check, then select Transformers in single analysis."
+      }
+    }
+  },
+  "hint": {
+    "windowSizeHint": "Define the time window used to evaluate inventory trends (e.g., 14 days or 2 weeks). Larger windows smooth fluctuations but may miss short-term anomalies.",
+    "minIntervalHint": "Minimum number of consecutive days considered as a shortage interval. Helps filter out noise.",
+    "safetyStockTitle": "Safety Stock Calculation",
+    "safetyStockExplanation": "Safety stock is dynamically calculated based on historical inventory fluctuations within the selected time window. It represents a buffer level to prevent stockouts. When actual inventory falls below this threshold, it may indicate a potential shortage risk.",
+    "viewFormula": "View formula",
+    "safetyStockDetail": "Safety stock is the q-quantile of demand over the past W periods. Here, D represents demand, W is the window size, and q (default 0.75) controls sensitivity to variability.",
+    "riskScoreTitle": "Risk Score Calculation",
+    "riskScoreExplanation": "The risk score measures the exposure severity of inventory shortages over the entire timeline. It accumulates all periods where inventory falls below safety stock and weights them by duration. Higher scores indicate longer-lasting and more severe shortages.",
+    "viewRiskFormula": "View calculation details",
+    "riskScoreDetail": "For each abnormal time interval where inventory is below safety stock, the system computes a shortage ratio: (Safety Stock - max(Inventory, 0)) / Safety Stock. Negative inventory values are treated as complete stockout conditions to avoid excessive amplification. The final risk score is calculated as the time-weighted shortage exposure divided by the total timeline duration, ensuring the score remains within [0,1]. Risk levels: L1 (<0.20), L2 (0.20-0.50), L3 (0.50-0.80), L4 (≥0.80).",
+    "fluctuation": "Detect the rapid transitions between \"safe\" and \"risk\" states.",
+    "gradualshortage": "Identify spikes when current demand significantly exceeds historical average.",
+    "demandspike": "Match demand with available stock and future supplies.",
+    "latesupply": "Check if inventory is non-increasing over time or the shortage gap is non-decreasing.",
+    "analysislimit": "The max number of materials the user wants to detect",
+    "materialPrefix": "Type any prefix (e.g., 1-, A-, ABC) to filter materials. Leave empty for all."
+  },
+  "forecast": {
+    "keyMaterials": "Key Materials",
+    "keyMaterialsHint": "Ranked by recent demand volume and record coverage.",
+    "loadFailed": "Failed to load key materials.",
+    "materialRequired": "Please enter a material code.",
+    "forecastFailed": "Forecast failed",
+    "forecasting": "Forecasting...",
+    "runForecast": "Run Forecast",
+    "historyWindow": "History Window",
+    "windowUnit": "Window Unit",
+    "demandVolume": "Demand Volume",
+    "noMaterials": "No key materials available. Upload data first.",
+    "runningHint": "Using Holt-Winters first, falling back to moving-average forecast when data is insufficient.",
+    "emptyTitle": "No Forecast Results",
+    "emptyHint": "Select a key material or enter a material code to generate a 12-week forecast.",
+    "shortageWeeks": "Forecast Shortage Weeks",
+    "maxShortage": "Forecast Max Shortage",
+    "firstShortageDate": "Forecast First Shortage Date",
+    "firstShortageWeek": "Forecast First Shortage Week",
+    "cumulativeShortage": "Forecast Cumulative Shortage",
+    "modelConfidence": "Model Confidence",
+    "modelReliability": "Model Reliability",
+    "modelConfidenceTitle": "Model Confidence Notes",
+    "modelReliabilityTitle": "Model Reliability Notes",
+    "notes": "* Long-term forecasts inherently involve greater uncertainty, causing prediction confidence intervals to widen over time. Therefore, only a limited future horizon (12 weeks) is forecasted.",
+    "weekFlowTitle": "What Week Flow Means",
+    "weekFlowExplanation": "Future inventory is projected from weekly inbound and outbound forecasts, then rolled forward by net flow rather than extrapolated only from the raw stock level.",
+    "weekFlowDefinition": "week_flow = predicted inbound - predicted outbound; Future inventory is rolled forward from current inventory with weekly net flow.",
+    "riskLevelTitle": "Forecast Risk Level Notes",
+    "riskLevelExplanation": "This Risk Level is a forward-looking replenishment risk flag for the next 12 weeks. It is based on whether forecast shortages appear, whether they continue, and how large they are relative to forecast safety stock.",
+    "riskLevelDifference": "It is not the same scale as the anomaly-detection L1/L2/L3/L4 labels. L1-L4 scores historical anomaly exposure, while forecast normal/watch/high is an operational signal for future shortage risk.",
+    "riskLevelBandsTitle": "What Each Band Means",
+    "forecastTimeline": "Forecast Timeline",
+    "timelineLabelNote": "Historical points are computed at weekly grain, but labels prefer the last real observed date in each week.",
+    "summaryTitle": "Summary",
+    "readingGuideTitle": "How to read this chart",
+    "confidenceLabel": {
+      "low": "Low Confidence",
+      "medium": "Medium Confidence",
+      "high": "High Confidence"
+    },
+    "historyWeeks": "history weeks",
+    "replenishmentAdvice": "Replenishment Advice",
+    "week": "Week",
+    "date": "Date",
+    "predictedInventory": "Predicted Inventory",
+    "predictedSafetyStock": "Predicted Safety Stock",
+    "shortage": "Shortage",
+    "suggestedReplenishment": "Suggested Replenishment",
+    "risk": {
+      "normal": "Normal",
+      "watch": "Watch",
+      "high": "High Risk"
+    },
+    "riskBands": {
+      "normal": "Normal: forecast inventory stays at or above forecast safety stock, so no clear shortage is visible.",
+      "watch": "Watch: a shortage appears, but the shortage ratio is still limited or not yet persistent.",
+      "high": "High: the shortage ratio is larger, or shortages continue across weeks, so replenishment and planning need closer attention."
+    },
+    "modelFormulaTitle": "Forecast Calculation",
+    "modelFormulaExplanation": "The system first aggregates inventory and safety stock histories by week, then forecasts the next 12 weeks separately. When enough changing history exists, it evaluates Holt-Winters; otherwise the forecast falls back to the recent 4-week moving average.",
+    "modelFormulaDetail": "Here y_t is the weekly inventory or safety-stock series, ℓ_t is level, b_t is trend, s_t is seasonality, m is the seasonal period, and φ is the damped-trend coefficient. The implementation trains separate models for inventory I and safety stock SS, producing Î_t and ŜS_t.",
+    "replenishmentFormulaTitle": "Shortage and Replenishment Calculation",
+    "replenishmentFormulaExplanation": "When forecast inventory falls below forecast safety stock, the difference is treated as a future shortage and shown as the first-version replenishment suggestion. It does not automatically override the MRP plan.",
+    "replenishmentFormulaDetail": "If forecast inventory is greater than or equal to forecast safety stock, Gap is 0. This version does not add MOQ, lot size, lead time, or approval constraints; it only provides a forecast advice layer.",
+    "confidenceText": {
+      "low": "History is short or has too little usable variation. Treat this as directional guidance.",
+      "medium": "Medium usually means the history length and variation are sufficient for directional judgement, and the model can reasonably tell whether risk is rising or easing. It does not mean the forecast is strong enough to support a replenishment commitment on its own, especially when future intervals are widening, recent patterns are shifting, or operational constraints such as in-transit supply, lot size, and lead time still matter.",
+      "high": "History is longer and weekly flow patterns are more stable. This is reasonable for short- to mid-term rolling guidance, but it should not replace business constraints."
+    },
+    "confidenceRule": {
+      "low": "Low Trigger: too few valid history weeks, almost no week-to-week variation (unique values ≤ 1), or the series is too sparse for any model to fit — both inbound and outbound fall back to a moving-average baseline. If either direction is rated low, the overall rating is low.",
+      "medium": "Medium Trigger: a model fitted successfully, but one of the following applies — ① ensemble mode has fewer than 10 valid history weeks; ② the best model is still the moving-average baseline (no seasonal fit); ③ valid history is under 24 weeks, so seasonal patterns cannot be confirmed.",
+      "high": "High Trigger: both inbound and outbound models are rated high (ensemble with ≥ 10 valid weeks, or the best model is Holt-Winters or another seasonal model), and total valid history is ≥ 24 weeks — enough to reliably capture periodic patterns."
+    },
+    "summary": {
+      "noShortage": "Across the next 12 weeks, forecast inventory remains above forecast safety stock, so no clear shortage signal is visible.",
+      "withWatch": "A forecast shortage starts in week {{shortageWeek}}, so replenishment and in-transit supply should be reviewed before then.",
+      "withEscalation": "A forecast shortage starts in week {{shortageWeek}} and escalates to high risk in week {{riskWeek}}, so replenishment or planning changes should be prepared early."
+    }
+  }
+}

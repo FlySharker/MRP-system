@@ -1,0 +1,456 @@
+{
+  "title": "MRP 系统",
+  "analyze": {
+    "analysisConsole": "分析控制台",
+    "consoleDescription": "把输入区做成偏管理后台的参数面板，而不是传统表单页。",
+    "active": "活跃",
+    "materialCode": "材料编号",
+    "placeholder": "例如 1-51692-5",
+    "windowSize": "窗口大小",
+    "quantileThreshold": "分位数阈值",
+    "minIntervalLength": "最小区间长度",
+    "includeLlmDeep": "调用 LLM 深度分析",
+    "startAnalysis": "开始分析",
+    "analyzing": "分析中...",
+    "clearResults": "清空结果",
+    "emptyTitle": "暂无分析结果",
+    "emptyHint": "输入物料编号并点击开始分析，结果将在此处展示。",
+    "materialRequired": "请输入材料编号。",
+    "analysisResults": "分析结果",
+    "noResults": "暂无结果。请输入材料编号并点击开始分析。",
+    "error": "错误",
+    "materialNotFound": "未找到材料",
+    "analysisFailed": "分析失败",
+    "inventoryTimeline": "库存时间线",
+    "positionTag": "位置 #1.0",
+    "inventory": "库存",
+    "safetyStock": "安全库存",
+    "diagnosticSummary": "诊断摘要",
+    "summaryDescription": "状态、规则命中和 LLM 文本放在同一阅读列，减少来回跳转。",
+    "materialId": "材料 ID",
+    "intervalCount": "区间数量",
+    "configSummary": "窗口 {{windowSize}} / 分位数 {{quantile}} / 最小区间 {{minIntervalLen}}",
+    "hit": "命中",
+    "notHit": "未命中",
+    "noLlmOutput": "当前未返回 LLM 分析文本，原因在于当前材料正常或者用户并未开启LLM分析功能。",
+    "rules": {
+      "title": "检测规则",
+      "gradualShortage": "下降趋势",
+      "fluctuation": "波动异常",
+      "demandSpike": "需求激增",
+      "delayedSupply": "延迟供应"
+    },
+    "confidence": "置信度",
+    "trend": "趋势",
+    "riskLevel": "风险等级",
+    "riskScore": "异常评分",
+    "description": "描述",
+    "llmLanguage": "大模型输出语言",
+    "llmProvider": "大模型来源",
+    "providerModelscope": "ModelScope API",
+    "providerOllama": "Ollama 本地",
+    "providerLocal": "本地 Transformers",
+    "llmReason": "原因分析：",
+    "llmRecommendation": "处理建议：",
+    "noLlmRecommendation": "当前未返回处理建议，原因在于当前材料正常或者用户并未开启LLM分析功能。",
+    "Chinese": "中文",
+    "English": "英文"
+  },
+  "batch": {
+    "batchFilterConsole": "批量筛选控制台",
+    "filterConsoleDescription": "筛选区也按参考图思路压成整齐的控制台，不做花哨模块切分。",
+    "filterActive": "活跃",
+    "materialPrefix": "材料前缀",
+    "all": "全部",
+    "analysisLimit": "分析数量限制",
+    "statusFilter": "状态筛选",
+    "normal": "正常",
+    "anomaly": "异常",
+    "startBatchAnalysis": "开始批量分析",
+    "analyzing": "分析中...",
+    "resetFilters": "重置筛选",
+    "emptyTitle": "暂无批量分析结果",
+    "emptyHint": "配置筛选条件并点击开始批量分析，结果将在此处展示。",
+    "batchResults": "批量结果",
+    "noResults": "暂无结果。请配置筛选条件并点击开始批量分析。",
+    "batchAnalysisFailed": "批量分析失败",
+    "metrics": "指标",
+    "reasonDistribution": "原因分布",
+    "resultDetails": "结果明细",
+    "total": "总计",
+    "totalScreened": "总排查量",
+    "normalCount": "正常数量",
+    "anomalyCount": "异常数量",
+    "riskRatio": "风险占比",
+    "riskScore": "异常评分",
+    "riskLevel": "风险等级",
+    "riskLevels": {
+      "L1": {
+        "label": "低风险",
+        "hint": "正常或库存风险较低，仅存在轻微波动或短期异常"
+      },
+      "L2": {
+        "label": "中低风险",
+        "hint": "出现一定供应或需求异常，需要持续关注"
+      },
+      "L3": {
+        "label": "中高风险",
+        "hint": "短缺风险明显，可能影响生产计划或交付"
+      },
+      "L4": {
+        "label": "高风险",
+        "hint": "存在严重供应短缺或需求异常，需要立即处理"
+      }
+    },
+    "riskLevelDistribution": "风险等级分布情况",
+    "statusDistribution": "状态分布",
+    "sentimentTag": "状态 {{count}}",
+    "reasonRanking": "原因排行",
+    "mentionsTag": "提及 {{count}}",
+    "analysisResults": "分析结果",
+    "rowsTag": "行数 {{count}}",
+    "shortageIntervalCount": "短缺区间数",
+    "firstShortageInterval": "首次短缺区间",
+    "batchPromptRow": "批量分析行",
+    "recentProcessHistory": "最近处理历史",
+    "visibleTag": "可见 {{count}}",
+    "noHistory": "当前 API 进程内暂无历史记录。",
+    "Chinese": "中文",
+    "English": "英文"
+  },
+  "home": {
+    "upload": {
+      "title": "上传数据文件",
+      "selectFile": "选择文件",
+      "noFile": "未选择文件",
+      "selected": "已选择",
+      "uploadButton": "上传并分析",
+      "uploading": "上传中...",
+      "uploadSuccess": "上传成功",
+      "uploadFailed": "上传失败，失败原因可能包括上传过程中的异常，或是文件内容格式不符合要求，请检查后重试。",
+      "noData": "当前暂无数据，请先上传文件",
+      "invalidFormat": "数据格式不正确",
+      "missingFields": "缺少必要字段"
+    },
+    "supplyIntelligence": "供应智能",
+    "heroTitle": "MRP 异常检测驾驶舱",
+    "heroDescription": "当前首页改成接近参考图的工作台式布局，重点放在概况卡片、最近记录和可继续深入的分析入口，而不是大面积宣传式视觉。",
+    "workspaceNotes": "工作台说明",
+    "workspaceNotesBody": "左侧导航承担产品壳层，顶部筛选条承担上下文切换，主区域保持高密度数据呈现，尽量贴近你给的产品截图气质。",
+    "activeMaterials": "活跃物料",
+    "recentRuns": "最近运行",
+    "backendStatus": "后端状态",
+    "live": "在线",
+    "syncing": "同步中",
+    "materials": "物料",
+    "materialsHint": "可检索物料主数据",
+    "materialsTrend": "物料主数据覆盖",
+    "records": "记录",
+    "recordsHint": "Excel 原始事件总量",
+    "recordsTrend": "MRP 原始事件行数",
+    "plants": "工厂",
+    "plantsHint": "唯一 plant_id 计数",
+    "plantsTrend": "工厂覆盖范围",
+    "dateWindow": "日期范围",
+    "dateWindowHint": "原始 MRP 观测区间",
+    "dateWindowTrend": "观测时间范围",
+    "recentAnalysisHistory": "最近分析历史",
+    "noRecentHistory": "当前还没有最近分析记录。",
+    "tableDescription": "用列表密度和状态标签去模拟参考图里 prompt table 的工作感。",
+    "visibility": "可见度 100%",
+    "quickActions": "快捷操作",
+    "quickActionsDescription": "把后续分析入口收成更像工作台的快捷操作卡。",
+    "table": {
+      "material": "物料",
+      "status": "状态",
+      "analyzedAt": "分析时间",
+      "llmLabel": "LLM 标签",
+      "materialPrompt": "MRP 物料提示"
+    },
+    "quickCards": {
+      "sourceCoverageTitle": "数据源覆盖",
+      "sourceCoverageNote": "数据源已接入 Python API，可直接拉取概况和分析结果。",
+      "singleMaterialTitle": "单料下钻分析",
+      "singleMaterialNote": "前往单料分析页查看短缺区间、规则命中与 LLM 文本解释。",
+      "batchRiskTitle": "批量风险扫描",
+      "batchRiskNote": "批量页提供风险占比、原因排行与明细表，适合做例行筛查。"
+    }
+  },
+  "language": "语言",
+  "chinese": "中文",
+  "english": "英文",
+  "time": {
+    "day": "天",
+    "week": "周",
+    "month": "月",
+    "year": "年"
+  },
+  "common": {
+    "yes": "是",
+    "no": "否"
+  },
+  "app": {
+    "operationConsole": "运营控制台",
+    "MRPInsight": "MRP洞察"
+  },
+  "nav": {
+    "llmSettings": "大模型配置",
+    "overview": "概览",
+    "singleAnalyze": "单条分析",
+    "batchAnalyze": "异常列表",
+    "dataSource": "数据源",
+    "rulesEngine": "规则引擎",
+    "workflows": "工作流",
+    "exports": "导出",
+    "forecast": "未来预测"
+  },
+  "sidebar": {
+    "general": "通用",
+    "actions": "操作",
+    "topics": "主题",
+    "collapseMenu": "菜单收缩",
+    "expandMenu": "菜单扩展"
+  },
+  "topicBoard": {
+    "allTopics": "全部主题",
+    "designReference": "设计参考",
+    "riskSignals": "风险信号",
+    "promptOutputs": "提示输出"
+  },
+  "sidebarCard": {
+    "workspaceSynced": "工作区已同步",
+    "workspaceDescription": "当前品牌化工作台已切换到高信息密度布局，适合表格与分析流并存。",
+    "exploreWorkspace": "探索工作台"
+  },
+  "topbar": {
+    "allModels": "全部模型",
+    "allTopics": "全部主题",
+    "search": "搜索",
+    "analyze": "分析",
+    "importData": "导入数据",
+    "connect": "连接",
+    "configuration": "配置",
+    "reset": "重置",
+    "processingAnalysis": "正在处理分析..."
+  },
+  "pageMeta": {
+    "llmSettings": {
+      "title": "大模型配置",
+      "subtitle": "配置企业大模型来源、运行参数、访问凭据和连接检查。"
+    },
+    "overview": {
+      "title": "概览",
+      "subtitle": "实时查看材料主数据覆盖、近期分析记录和异常检测工作流状态。",
+      "stats": [
+        "数据已同步",
+        "API 在线",
+        "MRP 就绪"
+      ]
+    },
+    "analyze": {
+      "title": "单条材料分析",
+      "subtitle": "输入单个材料编号，审阅规则命中、区间高亮和 LLM 解释结果。",
+      "stats": [
+        "交互查询",
+        "规则追踪",
+        "图表焦点"
+      ]
+    },
+    "batch": {
+      "title": "异常列表",
+      "subtitle": "批量筛查物料范围，快速比较风险占比、原因分布和明细结果。",
+      "stats": [
+        "批量队列",
+        "结果表格",
+        "原因排名"
+      ]
+    },
+    "forecast": {
+      "title": "未来预测",
+      "subtitle": "预测关键物料的库存与安全库存，并查看补货建议。"
+    }
+  },
+  "llmSettings": {
+    "title": "企业大模型配置",
+    "subtitle": "统一管理云端 API、Ollama 和本地 Transformers 三种调用方式。",
+    "enabled": "已启用",
+    "disabled": "已停用",
+    "loading": "正在加载大模型配置...",
+    "loadFailed": "大模型配置加载失败。",
+    "save": "保存配置",
+    "saving": "正在保存配置...",
+    "saveSucceeded": "大模型配置已保存。",
+    "saveFailed": "大模型配置保存失败。",
+    "testActive": "测试当前来源",
+    "testing": "正在测试连接...",
+    "testFailed": "连接测试失败。",
+    "providerTabs": "大模型来源配置",
+    "general": {
+      "title": "通用运行参数",
+      "subtitle": "这些默认值将用于单例材料的 LLM 深度分析。",
+      "enableLlm": "启用 LLM 深度分析",
+      "defaultProvider": "默认大模型来源",
+      "defaultLanguage": "默认输出语言",
+      "temperature": "随机性 Temperature",
+      "maxTokens": "最大输出 Token 数",
+      "timeout": "超时时间（秒）",
+      "retryCount": "失败重试次数"
+    },
+    "providers": {
+      "modelscope": {
+        "title": "ModelScope API",
+        "short": "ModelScope",
+        "subtitle": "通过 OpenAI 兼容 API 使用云端推理，适合快速部署。"
+      },
+      "ollama": {
+        "title": "Ollama 本地",
+        "short": "Ollama",
+        "subtitle": "在企业工作站或内网服务器上运行本地模型服务。"
+      },
+      "local": {
+        "title": "本地 Transformers",
+        "short": "Transformers",
+        "subtitle": "直接通过 PyTorch 和 Transformers 加载模型文件，实现完全离线推理。"
+      }
+    },
+    "modelscope": {
+      "apiKey": "API Key",
+      "apiKeySaved": "已保存密钥，留空可继续沿用。",
+      "apiKeyHint": "密钥只保存在后端，不会返回给浏览器。",
+      "baseUrl": "Base URL",
+      "model": "模型名称"
+    },
+    "ollama": {
+      "host": "Ollama 服务地址",
+      "model": "模型名称",
+      "keepAlive": "模型保活时间"
+    },
+    "local": {
+      "modelPath": "本地模型路径",
+      "deviceMap": "计算设备",
+      "torchDtype": "计算精度"
+    },
+    "usage": {
+      "title": "三种调用方式部署说明",
+      "enterpriseReady": "管理员参考",
+      "provider": "调用方式",
+      "scenario": "适用场景",
+      "setup": "使用前准备",
+      "operation": "操作方式",
+      "modelscope": {
+        "scenario": "企业允许访问外部模型服务，希望以最少部署工作快速上线。",
+        "setup": "申请 ModelScope Token，并配置 API Key、Base URL 和模型名称。",
+        "operation": "保存配置并测试连接，然后在单例分析中选择 ModelScope。"
+      },
+      "ollama": {
+        "scenario": "要求业务数据留在企业设备或内网，同时希望降低本地模型部署复杂度。",
+        "setup": "安装 Ollama，执行 `ollama pull <model-id>`，安装 Python ollama 包并启动服务。",
+        "operation": "填写 Ollama 地址和模型名称，测试可用后在单例分析中选择 Ollama。"
+      },
+      "local": {
+        "scenario": "需要完全离线，并且企业具有专用 GPU、驱动和模型文件管理能力。",
+        "setup": "准备模型目录，并安装相互兼容的 torch、transformers、accelerate 和 GPU 驱动。",
+        "operation": "配置模型路径、计算设备和精度，环境检查通过后在单例分析中选择 Transformers。"
+      }
+    }
+  },
+  "hint": {
+    "windowSizeHint": "用于分析库存变化趋势的时间窗口（如14天、2周）。窗口越大越平滑，但可能忽略短期异常。",
+    "minIntervalHint": "判定为缺货区间所需的最小连续时间长度，用于过滤短期波动噪声。",
+    "safetyStockTitle": "安全库存计算方式",
+    "safetyStockExplanation": "安全库存基于滑动时间窗口内的历史需求动态计算，它代表一种防止缺货的缓冲库存水平。当实际库存低于该阈值时，可能意味着存在潜在的缺货风险。",
+    "viewFormula": "查看计算公式",
+    "safetyStockDetail": "安全库存为过去 W 时间窗口内需求的 q 分位数，其中 D 表示需求，W 为窗口大小，q（默认0.75）用于控制对波动的敏感性。",
+    "riskScoreTitle": "异常评分计算方式",
+    "riskScoreExplanation": "异常评分用于衡量库存短缺在整个时间轴中的暴露程度。系统会累计所有库存低于安全库存的时间段，并结合持续时间进行加权。得分越高，表示缺货持续越久、缺口越严重。",
+    "viewRiskFormula": "查看计算详情",
+    "riskScoreDetail": "对于每一个库存低于安全库存的异常时间段，系统会计算短缺比例：(安全库存 - max(库存, 0)) / 安全库存。当库存为负数时，系统将其视为完全缺货状态，以避免异常值过度放大。最终风险得分通过时间加权的短缺暴露面积除以整个时间轴长度得到，因此得分稳定限制在 [0,1] 范围内。风险等级划分：L1 (<0.20)，L2 (0.20-0.50)，L3 (0.50-0.80)，L4 (≥0.80)。",
+    "fluctuation": "检测\"安全\"与\"风险\"状态之间的快速转换。",
+    "gradualshortage": "识别当前需求显著超过历史平均值时的峰值。",
+    "demandspike": "将需求与实际库存及未来供应量进行匹配。",
+    "latesupply": "检查库存是否随时间推移呈非增长趋势，或短缺缺口是否呈非缩小趋势。",
+    "analysislimit": "用户想要检测的材料最大数量",
+    "materialPrefix": "输入任意前缀（如 1-、A-、ABC）来筛选材料，留空表示全部"
+  },
+  "forecast": {
+    "keyMaterials": "关键物料",
+    "keyMaterialsHint": "按近期需求量和记录覆盖度排序。",
+    "loadFailed": "关键物料加载失败。",
+    "materialRequired": "请输入材料编号。",
+    "forecastFailed": "预测失败",
+    "forecasting": "预测中...",
+    "runForecast": "运行预测",
+    "historyWindow": "历史窗口",
+    "windowUnit": "窗口单位",
+    "demandVolume": "需求量",
+    "noMaterials": "暂无关键物料，请先上传数据。",
+    "runningHint": "优先使用 Holt-Winters，数据不足时回退到移动平均预测。",
+    "emptyTitle": "暂无预测结果",
+    "emptyHint": "选择关键物料或输入材料编号，生成未来12周预测。",
+    "shortageWeeks": "未来短缺周数",
+    "maxShortage": "未来最大缺口",
+    "firstShortageDate": "未来首次短缺日期",
+    "firstShortageWeek": "未来首次短缺周",
+    "cumulativeShortage": "未来累计缺口",
+    "modelConfidence": "模型置信度",
+    "modelReliability": "模型可靠性",
+    "modelConfidenceTitle": "模型置信度说明",
+    "modelReliabilityTitle": "模型可靠性说明",
+    "notes": "*长期预测存在更高不确定性，预测的置信度区间会随时间逐步扩张，故只预测未来有限时间(12周)的结果",
+    "weekFlowTitle": "周净流量(Week Flow)的含义",
+    "weekFlowExplanation": "未来库存先按周预测入库和出库，再由净流量滚动推演出来，不是只按历史库存水平直接外推。",
+    "weekFlowDefinition": "周净流量 = 预测入库量 - 预测出库量；未来库存以当前库存为起点，按每周净流量逐周滚动计算。",
+    "riskLevelTitle": "预测风险等级说明",
+    "riskLevelExplanation": "这里的风险等级是未来12周补货风险分层，直接依据预测缺口是否出现、是否连续、以及缺口占预测安全库存的比例来判断。",
+    "riskLevelDifference": "它和异常检测页的 L1/L2/L3/L4 不是同一套口径。L1-L4 是对历史异常暴露程度的评分分级；Forecast 的 normal/watch/high 是对未来预测短缺风险的运营提示。",
+    "riskLevelBandsTitle": "风险档位含义",
+    "forecastTimeline": "预测时间线",
+    "timelineLabelNote": "历史段按周聚合计算，但标签优先显示该周最后一个真实观测日期。",
+    "summaryTitle": "结论摘要",
+    "readingGuideTitle": "如何阅读这张图",
+    "confidenceLabel": {
+      "low": "低可靠性",
+      "medium": "中等可靠性",
+      "high": "高可靠性"
+    },
+    "historyWeeks": "周历史",
+    "replenishmentAdvice": "补货建议",
+    "week": "周次",
+    "date": "日期",
+    "predictedInventory": "预测库存",
+    "predictedSafetyStock": "预测安全库存",
+    "shortage": "缺口",
+    "suggestedReplenishment": "建议补货量",
+    "risk": {
+      "normal": "正常",
+      "watch": "关注",
+      "high": "高风险"
+    },
+    "riskBands": {
+      "normal": "Normal：预测库存始终不低于预测安全库存，当前未看到明确短缺。",
+      "watch": "Watch：出现短缺，但缺口占预测安全库存比例还不算高，或还没有形成连续短缺。",
+      "high": "High：短缺比例较高，或短缺已经连续发生，说明未来几周需要更主动地看补货和计划调整。"
+    },
+    "modelFormulaTitle": "未来预测计算方式",
+    "modelFormulaExplanation": "系统先把库存和安全库存历史序列按周聚合，然后分别预测未来12周。历史点足够且序列有变化时评估 Holt-Winters；数据不足或训练失败时回退到最近4周移动平均。",
+    "modelFormulaDetail": "其中 y_t 表示按周聚合后的库存或安全库存序列，ℓ_t 是水平项，b_t 是趋势项，s_t 是季节项，m 是季节周期，φ 是阻尼趋势系数。当前实现分别对库存 I 和安全库存 SS 训练模型，得到预测值 Î_t 与 ŜS_t。",
+    "replenishmentFormulaTitle": "缺口与补货建议计算方式",
+    "replenishmentFormulaExplanation": "当预测库存低于预测安全库存时，差额被视为未来缺口，并作为第一版建议补货量展示。该建议不会自动覆盖 MRP 计划。",
+    "replenishmentFormulaDetail": "如果预测库存大于或等于预测安全库存，则 Gap 为0。当前版本暂不叠加 MOQ、批量、交期或审批逻辑，只提供预测建议层。",
+    "confidenceText": {
+      "low": "历史周数偏少，或可用波动信息不足，结果更适合做方向性参考。",
+      "medium": "Medium一般表示历史长度和波动信息已经足够支撑方向判断，模型能较稳定地区分“风险在上升还是缓解”。但它还不代表结果已经强到可以单独做补货承诺，尤其当未来区间开始变宽、近期模式有切换，或业务上存在在途、批量、交期等额外约束时，仍应结合人工判断一起看。",
+      "high": "历史周数较长且周流量模式较稳定，可作为中短期滚动参考，但仍不能替代业务约束。"
+    },
+    "confidenceRule": {
+      "low": "Low触发条件：历史有效周数不足、周间数据几乎无波动（唯一值 ≤ 1）、或数据过于稀疏；入库/出库模型均无法拟合，只能退化为移动平均基线。任一方向（入库或出库）被判定为 low 时，整体即为 low。",
+      "medium": "Medium触发条件：模型已成功拟合，但满足以下任一情形 ——1、集成模式下有效历史周数不足 10 周；2、最优模型仅为移动平均基线（无季节性拟合能力）；3、历史周数不足 24 周，尚不足以确认季节性模式。",
+      "high": "High触发条件：入库和出库模型均为 high（集成模式下 ≥ 10 周有效历史，或最优模型为 Holt-Winters 等季节性模型），且总有效历史周数 ≥ 24 周，可较可靠地捕捉周期性规律。"
+    },
+    "summary": {
+      "noShortage": "未来12周内，预测库存整体仍高于预测安全库存，当前未看到明确短缺信号。",
+      "withWatch": "预测短缺从第 {{shortageWeek}} 周开始出现，建议从该周前开始关注补货和在途供给。",
+      "withEscalation": "预测短缺从第 {{shortageWeek}} 周开始出现，并在第 {{riskWeek}} 周进入高风险，建议提前安排补货或计划调整。"
+    }
+  }
+}
